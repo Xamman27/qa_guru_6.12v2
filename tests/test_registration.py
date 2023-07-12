@@ -27,7 +27,7 @@ user = User(
 )
 
 
-@allure.title("Successful fill form")
+@allure.title("Successful registration")
 def test_registration_user(setup_browser):
     browser = setup_browser
 
@@ -72,5 +72,5 @@ def test_registration_user(setup_browser):
 
         browser.element("#submit").perform(command.js.click)
 
-    with allure.step("Check form results"):
+    with allure.step("Assert form results"):
         browser.element("#example-modal-sizes-title-lg").should(have.text("Thanks for submitting the form"))
